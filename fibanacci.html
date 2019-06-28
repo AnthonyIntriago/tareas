@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>documento</title>
+</head>
+<body>
+    <h1>hola que hace</h1>
+</body>
+<script>
+var sumaTotal=2;
+const MAXIMO=100;
+//autor:Anthony Intriago
+//Permite saber si el numero es par
+var esPar=function(numero){
+    if(numero%2 ===0){
+        return true
+    }else{
+        return false
+    }
+}
+//se crea un array para mostrar mas datos de la funcion
+var resultados={
+    suma:2,
+    pares:[],
+    impares:[],
+    numerototal:[]
+}
+//permite empezar la serie fibonacci
+var fibonacci=function(numero1,numero2){
+    if(numero1+numero2>MAXIMO){
+        return resultados.suma;
+    }else{
+        nuevoNumero=numero1+numero2
+        if(esPar(nuevoNumero)){
+            resultados.suma+=nuevoNumero
+            resultados.pares.push(nuevoNumero)
+        }else{
+            resultados.impares.push(nuevoNumero)
+        }
+    resultados.numerototal.push(nuevoNumero)
+    return fibonacci(numero2,nuevoNumero)
+    }  
+}
+console.log(fibonacci(1,2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
